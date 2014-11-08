@@ -19,10 +19,12 @@ render = web.template.render('templates')
 
 class index:
     def GET(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return render.index()
 
 class post:
     def POST(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         basicData = "<!DOCTYPE html><html><head><title>DOXBIN</title></head><body>%s</body></html>"
 
         if os.path.exists('dox/DISABLEPOST'):
@@ -52,6 +54,7 @@ class post:
 
 class doxviewer:
     def GET(self, dox):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         if dox == "":
             return render.doxerviewer("Hecker Scum!")
         dox = re.sub(r'[<>|#${}.()/\\]', '_', dox)
@@ -59,6 +62,7 @@ class doxviewer:
 
 class archive:
     def GET(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         html = ""
         doxs = glob.glob('dox/*.txt')
         for dox in doxs:
@@ -67,14 +71,17 @@ class archive:
 
 class proscription:
     def GET(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return render.proscription()
 
 class privacy:
     def GET(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return render.privacy()
 
 class faq:
     def GET(self):
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return render.faq()
 
 if __name__ == "__main__":
