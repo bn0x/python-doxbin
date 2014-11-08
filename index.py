@@ -66,7 +66,27 @@ class archive:
         html = ""
         doxs = glob.glob('dox/*.txt')
         for dox in doxs:
-            html += '<a href="/doxviewer/%s">%s</a><br/>\n'%(dox.split('\\')[1].split('.txt')[0], dox.split('\\')[1].split('.txt')[0])
+            htmlToAdd = '<a href="/doxviewer/%s">%s</a>\n'%(dox.split('\\')[1].split('.txt')[0], dox.split('\\')[1].split('.txt')[0])
+
+            if os.path.exists('static/img/verification/%s.txt'%dox.split('.txt')[0].split('\\')[1]):
+                htmlToAdd += '<img src="/static/img/green-checkbox.png"></img>'
+
+            if os.path.exists('static/img/rip/%s.txt'%dox.split('.txt')[0].split('\\')[1]):
+                htmlToAdd += '<img src="/static/img/rip.png"></img>'
+
+            if os.path.exists('static/img/mail/%s.txt'%dox.split('.txt')[0].split('\\')[1]):
+                htmlToAdd += '<img src="/static/img/mail.png"></img>'
+
+            if os.path.exists('static/img/ssn/%s.txt'%dox.split('.txt')[0].split('\\')[1]):
+                htmlToAdd += '<img src="/static/img/ssn.png"></img>'
+
+            if os.path.exists('static/img/isp/%s.txt'%dox.split('.txt')[0].split('\\')[1]):
+                htmlToAdd += '<img src="/static/img/isp.png"></img>'
+
+            if "<br/>" not in htmlToAdd:
+                htmlToAdd += "<br/>"
+
+            html += htmlToAdd
         return render.archive(html)
 
 class proscription:
