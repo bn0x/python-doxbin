@@ -64,7 +64,15 @@ class archive:
     def GET(self):
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         html = ""
-        doxs = glob.glob('dox/*.txt')
+        try:
+            sort = web.input()['sort']
+            if sort == "24":
+                doxs = sorted(glob.glob('dox/*.txt'), key=os.path.getatime)[0:10]
+            else:
+                doxs = sorted(glob.glob('dox/*.txt'), key=str.lower)
+        except:
+            doxs = sorted(glob.glob('dox/*.txt'), key=str.lower)
+
         for dox in doxs:
             htmlToAdd = '<a href="/doxviewer/%s">%s</a>\n'%(dox.split('\\')[1].split('.txt')[0], dox.split('\\')[1].split('.txt')[0])
 
