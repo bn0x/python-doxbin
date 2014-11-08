@@ -1,0 +1,11 @@
+IGN: iJezuz
+Name: Nick Maderia
+Address: 25 Rawson Road, Bellingham, MA, 02019, USA
+Home Phone: 508-966-2544
+
+Father: Ronald F Maderia
+DOB: 09/20/1967
+
+Email: nickmaderia@gmail.com
+IP: 108.20.199.225 // Verizon FiOS, Bellingham, MA - pool-108-20-199-225.bstnma.fios.verizon.net
+DB String: nodus.sql:INSERT INTO `mybb_users` VALUES(53296, 'xITry4Fun', '6c17ff4bf7142eb687beed4521199851', 'ZfC6Vyca', 'V4sjW4wAYOaktOjie3Zvq3xAwG5HUj3C3Hdj7lkocADhA4vEDl', 'nickmaderia@gmail.com', 0, '', '', '', 2, '', 0, '', 1353865485, 1353865750, 1353865485, 0, '', '0', '', '', '', '', 'all', '', 0, 0, 1, 0, 1, 0, 1, 0, 'linear', 1, 1, 1, 1, 0, 0, 0, '', '', '10', 0, 2, '', '', 0, 0, 0, '0', '', '', '', 0, 0, 0, '108.20.199.225', '108.20.199.225', 1813301217, 1813301217, '', 266, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, '', 0, '', '', '', 0, 0, 0);
